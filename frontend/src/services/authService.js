@@ -1,8 +1,10 @@
 import axios from "axios";
 
-const API_URL =
-    "http://192.168.100.7:3000/api/auth";
+import API_URL
+from "../config/api";
 
+const AUTH_URL =
+    `${API_URL}/api/auth`;
 export const login = async (
     correo,
     password
@@ -10,7 +12,7 @@ export const login = async (
 
     const response =
         await axios.post(
-            `${API_URL}/login`,
+            `${AUTH_URL}/login`,
             {
                 correo,
                 password

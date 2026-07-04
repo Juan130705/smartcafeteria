@@ -2,7 +2,8 @@ import {
     useEffect,
     useState
 } from "react";
-
+import API_URL
+from "../config/api";
 import axios from "axios";
 
 function MisPedidos() {
@@ -22,7 +23,7 @@ function MisPedidos() {
 
                 const response =
                     await axios.get(
-                        "http://192.168.100.7:3000/api/pedidos/mis-pedidos",
+                        `${API_URL}/api/pedidos/mis-pedidos`,
                         {
                             headers: {
                                 Authorization:

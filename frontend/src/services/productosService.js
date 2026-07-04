@@ -1,7 +1,8 @@
 import axios from "axios";
-
+import API_URL
+from "../config/api";
 const API =
-    "http://192.168.100.7:3000/api/productos";
+    `${API_URL}/api/productos`;
 
 export const obtenerProductos = async () => {
 

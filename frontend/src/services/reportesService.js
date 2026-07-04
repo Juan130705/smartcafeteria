@@ -1,7 +1,8 @@
 import axios from "axios";
+import API_URL from "../config/api";
 
-const API_URL =
-    "http://192.168.100.7:3000/api/reportes";
+const REPORTES_URL =
+    `${API_URL}/api/reportes`;
 
 export const obtenerResumen =
     async () => {
@@ -13,7 +14,7 @@ export const obtenerResumen =
 
         const response =
             await axios.get(
-                `${API_URL}/resumen`,
+                `${REPORTES_URL}/resumen`,
                 {
                     headers: {
                         Authorization:
@@ -36,7 +37,7 @@ export const obtenerVentasDia =
 
         const response =
             await axios.get(
-                `${API_URL}/ventas-dia`,
+                `${REPORTES_URL}/ventas-dia`,
                 {
                     headers: {
                         Authorization:

@@ -4,7 +4,8 @@ import {
 } from "react";
 
 import axios from "axios";
-
+import API_URL
+from "../config/api";
 function Notificaciones() {
 
     const [
@@ -26,7 +27,7 @@ function Notificaciones() {
 
                     const response =
                         await axios.get(
-                            "http://192.168.100.7:3000/api/notificaciones",
+                            `${API_URL}/api/notificaciones`,
                             {
                                 headers: {
                                     Authorization:
