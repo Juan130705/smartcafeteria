@@ -1,7 +1,7 @@
 import axios from "axios";
-import API_URL
-from "../config/api";
-const API_URL =
+import API_URL from "../config/api";
+
+const PEDIDOS_URL =
     `${API_URL}/api/pedidos`;
 
 const obtenerHeaders = () => {
@@ -25,7 +25,7 @@ export const obtenerPedidos =
 
         const response =
             await axios.get(
-                API_URL,
+                PEDIDOS_URL,
                 obtenerHeaders()
             );
 
@@ -38,7 +38,7 @@ export const obtenerPedidoPorId =
 
         const response =
             await axios.get(
-                `${API_URL}/${id}`,
+                `${PEDIDOS_URL}/${id}`,
                 obtenerHeaders()
             );
 
@@ -51,7 +51,7 @@ export const crearPedido =
 
         const response =
             await axios.post(
-                API_URL,
+                PEDIDOS_URL,
                 pedido,
                 obtenerHeaders()
             );
@@ -68,7 +68,7 @@ export const actualizarEstado =
 
         const response =
             await axios.put(
-                `${API_URL}/${id}/estado`,
+                `${PEDIDOS_URL}/${id}/estado`,
                 {
                     estado
                 },
