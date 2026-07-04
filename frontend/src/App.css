@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+.dashboard {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.columna {
+  flex: 1;
+  background: #eceff1;
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.columna h2 {
+  text-align: center;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 6px rgba(0,0,0,.2);
+}
+
+.card button {
+  margin-right: 5px;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.prep {
+  background: orange;
+  color: white;
+}
+
+.listo {
+  background: green;
+  color: white;
+}
