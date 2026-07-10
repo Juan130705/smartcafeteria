@@ -38,21 +38,37 @@ function Navbar() {
         <nav
             style={{
                 background:
-                    "#1976d2",
+                    "linear-gradient(90deg,#2F2F35,#1F1F24)",
 
                 padding:
-                    "15px",
+                    "15px 25px",
 
                 display:
                     "flex",
 
                 gap:
-                    "20px",
+                    "15px",
 
                 alignItems:
-                    "center"
+                    "center",
+
+                flexWrap:
+                    "wrap",
+
+                boxShadow:
+                    "0 4px 10px rgba(0,0,0,.25)"
             }}
         >
+
+            <h2
+                style={{
+                    color: "#E86D4F",
+                    margin: 0,
+                    marginRight: "20px"
+                }}
+            >
+                🍽 UTC SmartCafetería
+            </h2>
 
             {!usuario && (
 
@@ -81,9 +97,7 @@ function Navbar() {
                         to="/carrito"
                         style={linkStyle}
                     >
-                        🛒 Carrito (
-                        {cantidad}
-                        )
+                        🛒 Carrito ({cantidad})
                     </Link>
 
                     <Link
@@ -178,13 +192,28 @@ function Navbar() {
                             "none",
 
                         padding:
-                            "8px 15px",
+                            "10px 18px",
 
                         borderRadius:
-                            "5px",
+                            "10px",
 
                         cursor:
-                            "pointer"
+                            "pointer",
+
+                        background:
+                            "#E86D4F",
+
+                        color:
+                            "white",
+
+                        fontWeight:
+                            "bold",
+
+                        fontSize:
+                            "14px",
+
+                        boxShadow:
+                            "0 3px 8px rgba(0,0,0,.2)"
                     }}
                 >
                     🚪 Salir
@@ -206,7 +235,16 @@ const linkStyle = {
         "none",
 
     fontWeight:
-        "bold"
+        "bold",
+
+    padding:
+        "10px 14px",
+
+    borderRadius:
+        "10px",
+
+    background:
+        "rgba(255,255,255,.08)"
 
 };
 

@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-
 import { obtenerProductos } from "../services/productosService";
-
 import { useCarrito } from "../context/CarritoContext";
 
 function Menu() {
@@ -36,19 +34,100 @@ function Menu() {
 
         <div
             style={{
-                padding: "20px"
+                backgroundColor: "#F5F5F5",
+                minHeight: "100vh",
+                paddingBottom: "40px"
             }}
         >
 
-            <h1>
-                🍔 Menú SmartCafetería
-            </h1>
+            {/* Banner */}
+
+            <div
+                style={{
+                    background: "#E86D4F",
+                    padding: "30px",
+                    textAlign: "center",
+                    color: "white",
+                    boxShadow:
+                        "0 4px 10px rgba(0,0,0,.15)"
+                }}
+            >
+                <h1
+                    style={{
+                        margin: 0,
+                        fontSize: "40px"
+                    }}
+                >
+                    🍽 SmartCafetería UTC
+                </h1>
+
+                <p
+                    style={{
+                        marginTop: "10px",
+                        fontSize: "20px",
+                        fontWeight: "bold"
+                    }}
+                >
+                    ¡No se trata de comer menos,
+                    sino de comer mejor!
+                </p>
+            </div>
+
+            {/* Categorías */}
 
             <div
                 style={{
                     display: "flex",
-                    gap: "20px",
+                    justifyContent: "center",
+                    gap: "15px",
+                    marginTop: "25px",
                     flexWrap: "wrap"
+                }}
+            >
+                <div
+                    style={{
+                        background: "#2F2F35",
+                        color: "white",
+                        padding: "10px 20px",
+                        borderRadius: "20px"
+                    }}
+                >
+                    🍔 Alimentos
+                </div>
+
+                <div
+                    style={{
+                        background: "#E86D4F",
+                        color: "white",
+                        padding: "10px 20px",
+                        borderRadius: "20px"
+                    }}
+                >
+                    🥤 Bebidas
+                </div>
+
+                <div
+                    style={{
+                        background: "#2F2F35",
+                        color: "white",
+                        padding: "10px 20px",
+                        borderRadius: "20px"
+                    }}
+                >
+                    🍪 Botanas
+                </div>
+            </div>
+
+            {/* Productos */}
+
+            <div
+                style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    justifyContent: "center",
+                    gap: "25px",
+                    marginTop: "40px",
+                    padding: "20px"
                 }}
             >
 
@@ -57,41 +136,68 @@ function Menu() {
                     <div
                         key={producto.id}
                         style={{
-                            background: "#fff",
-                            width: "250px",
-                            padding: "20px",
-                            borderRadius: "12px",
+                            width: "280px",
+                            background: "white",
+                            borderRadius: "20px",
+                            overflow: "hidden",
                             boxShadow:
-                                "0 2px 8px rgba(0,0,0,.15)"
+                                "0 5px 15px rgba(0,0,0,.15)",
+                            transition: ".3s"
                         }}
                     >
 
-                        <h3>
-                            {producto.nombre}
-                        </h3>
+                        {/* Imagen temporal */}
 
-                        <p>
-                            {producto.descripcion}
-                        </p>
+                        https://images.unsplash.com/photo-1546069901-ba9599a7e63c
 
-                        <p>
-                            ${producto.precio}
-                        </p>
-
-                        <button
-                            onClick={() => {
-
-                                console.log(
-                                    "Agregando producto:",
-                                    producto
-                                );
-
-                                agregarProducto(producto);
-
+                        <div
+                            style={{
+                                padding: "20px"
                             }}
                         >
-                            Agregar
-                        </button>
+
+                            <h3
+                                style={{
+                                    color: "#2F2F35"
+                                }}
+                            >
+                                {producto.nombre}
+                            </h3>
+
+                            <p>
+                                {producto.descripcion}
+                            </p>
+
+                            <h2
+                                style={{
+                                    color: "#E86D4F"
+                                }}
+                            >
+                                ${producto.precio}
+                            </h2>
+
+                            <button
+                                onClick={() =>
+                                    agregarProducto(
+                                        producto
+                                    )
+                                }
+                                style={{
+                                    width: "100%",
+                                    padding: "12px",
+                                    border: "none",
+                                    background:
+                                        "#E86D4F",
+                                    color: "white",
+                                    fontWeight: "bold",
+                                    borderRadius: "10px",
+                                    cursor: "pointer"
+                                }}
+                            >
+                                ➕ Agregar al carrito
+                            </button>
+
+                        </div>
 
                     </div>
 
