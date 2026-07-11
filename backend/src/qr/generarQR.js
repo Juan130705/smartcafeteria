@@ -8,7 +8,7 @@ async function generarQR() {
         await QRCode.toFile(
             "./smartcafeteria-qr.png",
 
-            "http://192.168.100.7:5173",
+            "https://smartcafeteria.vercel.app",
 
             {
                 width: 500,
