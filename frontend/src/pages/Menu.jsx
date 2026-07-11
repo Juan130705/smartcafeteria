@@ -130,8 +130,7 @@ function Menu() {
                                 "0 5px 15px rgba(0,0,0,.15)"
                         }}
                     >
-                        https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800
-
+                        
                         <div
                             style={{
                                 padding: "20px"
