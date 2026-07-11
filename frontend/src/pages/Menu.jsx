@@ -3,35 +3,24 @@ import { obtenerProductos } from "../services/productosService";
 import { useCarrito } from "../context/CarritoContext";
 
 function Menu() {
-
     const [productos, setProductos] = useState([]);
 
     const { agregarProducto } = useCarrito();
 
     useEffect(() => {
-
         cargarProductos();
-
     }, []);
 
     const cargarProductos = async () => {
-
         try {
-
             const data = await obtenerProductos();
-
             setProductos(data);
-
         } catch (error) {
-
             console.error(error);
-
         }
-
     };
 
     return (
-
         <div
             style={{
                 backgroundColor: "#F5F5F5",
@@ -39,12 +28,11 @@ function Menu() {
                 paddingBottom: "40px"
             }}
         >
-
             {/* Banner */}
-
             <div
                 style={{
-                    background: "#E86D4F",
+                    background:
+                        "linear-gradient(90deg,#E86D4F,#F08A6B)",
                     padding: "30px",
                     textAlign: "center",
                     color: "white",
@@ -55,7 +43,7 @@ function Menu() {
                 <h1
                     style={{
                         margin: 0,
-                        fontSize: "40px"
+                        fontSize: "42px"
                     }}
                 >
                     🍽 SmartCafetería UTC
@@ -68,13 +56,11 @@ function Menu() {
                         fontWeight: "bold"
                     }}
                 >
-                    ¡No se trata de comer menos,
-                    sino de comer mejor!
+                    ¡No se trata de comer menos, sino de comer mejor!
                 </p>
             </div>
 
             {/* Categorías */}
-
             <div
                 style={{
                     display: "flex",
@@ -88,8 +74,9 @@ function Menu() {
                     style={{
                         background: "#2F2F35",
                         color: "white",
-                        padding: "10px 20px",
-                        borderRadius: "20px"
+                        padding: "12px 24px",
+                        borderRadius: "25px",
+                        fontWeight: "bold"
                     }}
                 >
                     🍔 Alimentos
@@ -99,8 +86,9 @@ function Menu() {
                     style={{
                         background: "#E86D4F",
                         color: "white",
-                        padding: "10px 20px",
-                        borderRadius: "20px"
+                        padding: "12px 24px",
+                        borderRadius: "25px",
+                        fontWeight: "bold"
                     }}
                 >
                     🥤 Bebidas
@@ -110,8 +98,9 @@ function Menu() {
                     style={{
                         background: "#2F2F35",
                         color: "white",
-                        padding: "10px 20px",
-                        borderRadius: "20px"
+                        padding: "12px 24px",
+                        borderRadius: "25px",
+                        fontWeight: "bold"
                     }}
                 >
                     🍪 Botanas
@@ -119,7 +108,6 @@ function Menu() {
             </div>
 
             {/* Productos */}
-
             <div
                 style={{
                     display: "flex",
@@ -130,41 +118,39 @@ function Menu() {
                     padding: "20px"
                 }}
             >
-
                 {productos.map((producto) => (
-
                     <div
                         key={producto.id}
                         style={{
                             width: "280px",
-                            background: "white",
+                            background: "#FFFFFF",
                             borderRadius: "20px",
                             overflow: "hidden",
                             boxShadow:
-                                "0 5px 15px rgba(0,0,0,.15)",
-                            transition: ".3s"
+                                "0 5px 15px rgba(0,0,0,.15)"
                         }}
                     >
-
-                        {/* Imagen temporal */}
-
-                        https://images.unsplash.com/photo-1546069901-ba9599a7e63c
+                        https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800
 
                         <div
                             style={{
                                 padding: "20px"
                             }}
                         >
-
                             <h3
                                 style={{
-                                    color: "#2F2F35"
+                                    color: "#2F2F35",
+                                    marginTop: 0
                                 }}
                             >
                                 {producto.nombre}
                             </h3>
 
-                            <p>
+                            <p
+                                style={{
+                                    color: "#666"
+                                }}
+                            >
                                 {producto.descripcion}
                             </p>
 
@@ -178,37 +164,27 @@ function Menu() {
 
                             <button
                                 onClick={() =>
-                                    agregarProducto(
-                                        producto
-                                    )
+                                    agregarProducto(producto)
                                 }
                                 style={{
                                     width: "100%",
                                     padding: "12px",
                                     border: "none",
-                                    background:
-                                        "#E86D4F",
+                                    borderRadius: "10px",
+                                    background: "#E86D4F",
                                     color: "white",
                                     fontWeight: "bold",
-                                    borderRadius: "10px",
                                     cursor: "pointer"
                                 }}
                             >
                                 ➕ Agregar al carrito
                             </button>
-
                         </div>
-
                     </div>
-
                 ))}
-
             </div>
-
         </div>
-
     );
-
 }
 
 export default Menu;
